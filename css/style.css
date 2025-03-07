@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+/* Declarando variaveis */
+:root {
+    --black: #464C59;
+    --white: #e4dbd3;
+    --blue1: #698EBF;
+    --blue2: #739CBF;
+    --blue3: #9ABBD9;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blue1);
+}
+
+main {
+    width: 60vw;
+    max-width: 1152px;
+    height: 50vh ;
+    max-height: 470px;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--blue3);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.404);
+}
+
+/* Configurações do relogio e timer */
+#clock {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hours, .minutes, .seconds {
+    width: 25%;
+    height: 100%;
+    background-color: var(--black);
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 3px var(--black);
+}
+
+.display {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.h2-hours, .h2-minutes, .h2-seconds, .p-hours, .p-minutes, .p-seconds {
+    color: var(--white);
+}
+
+.h2-hours, .h2-minutes, .h2-seconds {
+    font-size: 10em;
+}
+
+.p-hours, .p-minutes, .p-seconds {
+    font-size: 1.7em;
+}
+
+/* Configurações da Area de opções */
+#options {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#options button {
+    width: 23%;
+    min-width: 120px;
+    height: 50%;
+    border: none;
+    border-radius: 10px;
+    opacity: .7;
+    background-color: var(--blue2);
+    color: var(--black);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#options button:hover {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 1650px) {
+    .h2-hours, .h2-minutes, .h2-seconds {
+        font-size: 8em;
+    }
+    
+    .p-hours, .p-minutes, .p-seconds {
+        font-size: 1.4em;
+    }
+} 
+
+@media screen and (max-width: 1340px) {
+    .h2-hours, .h2-minutes, .h2-seconds {
+        font-size: 6em;
+    }
+    
+    .p-hours, .p-minutes, .p-seconds {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        height: 70vh ;
+        max-height: 600px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #clock {
+        width: 90%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .hours, .minutes, .seconds {
+        width: 100%;
+        height: 30%;
+        background-color: var(--black);
+        border-radius: 10px;
+        border: none;
+        box-shadow: 1px 1px 3px var(--black);
+    }
+
+    .h2-hours, .h2-minutes, .h2-seconds {
+        font-size: 4.5em;
+    }
+    
+    .p-hours, .p-minutes, .p-seconds {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    #options {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #options button {
+        height: 80%;
+    }
+}

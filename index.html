@@ -4,56 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relogio Digital</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <main>
         <section id="clock">
-            <section class="hours">
-                <div class="display">
-                    <h2 class="h2-hours">00</h2>
-                    <p class="p-hours">Horas</p>
-                </div>
-            </section>
-            <section class="minutes">
-                <div class="display">
-                    <h2 class="h2-minutes">00</h2>
-                    <p class="p-minutes">Minutos</p>
-                </div>
-            </section>
-            <section class="seconds">
-                <div class="display">
-                    <h2 class="h2-seconds">00</h2>
-                    <p class="p-seconds">Segundos</p>
-                </div>
-            </section>
+            <div id="display-clock">
+                <section class="hours">
+                    <div class="display">
+                        <h2 id="h2-hour-clock" class="h2-hours">00</h2>
+                        <p class="p-hours">Horas</p>
+                    </div>
+                </section>
+                <section class="minutes">
+                    <div class="display">
+                        <h2 id="h2-minute-clock" class="h2-minutes">00</h2>
+                        <p class="p-minutes">Minutos</p>
+                    </div>
+                </section>
+                <section class="seconds">
+                    <div class="display">
+                        <h2 id="h2-second-clock" class="h2-seconds">00</h2>
+                        <p class="p-seconds">Segundos</p>
+                    </div>
+                </section>
+            </div>
         </section>
-        <section id="timer" class="hidden">
-            <section class="hours">
-                <div class="display">
-                    <h2 class="h2-hours">00</h2>
-                    <p class="p-hours">Horas</p>
-                </div>
-            </section>
-            <section class="minutes">
-                <div class="display">
-                    <h2 class="h2-minutes">00</h2>
-                    <p class="p-minutes">Minutos</p>
-                </div>
-            </section>
-            <section class="seconds">
-                <div class="display">
-                    <h2 class="h2-seconds">00</h2>
-                    <p class="p-seconds">Segundos</p>
-                </div>
-            </section>
+        <section id="stopwatch" class="hidden">
+            <div id="display-stopwatch">
+                <section class="hours">
+                    <div class="display">
+                        <h2 id="h2-hour-stopwatch" class="h2-hours">00</h2>
+                        <p class="p-hours">Horas</p>
+                    </div>
+                </section>
+                <section class="minutes">
+                    <div class="display">
+                        <h2 id="h2-minute-stopwatch" class="h2-minutes">00</h2>
+                        <p class="p-minutes">Minutos</p>
+                    </div>
+                </section>
+                <section class="seconds">
+                    <div class="display">
+                        <h2 id="h2-second-stopwatch" class="h2-seconds">00</h2>
+                        <p class="p-seconds">Segundos</p>
+                    </div>
+                </section>
+            </div>
         </section>
         <section id="options">
-            <button>Parar</button>
-            <button id="toggle-type">Temporizador</button>
-            <button>Play</button>
+            <button id="play-pause" class="hidden">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="toggle-type" value="Cronômetro">
+                Cronômetro
+            </button>
+            <button id="flag" class="hidden">
+                <i class="fa-solid fa-flag"></i>
+            </button>
         </section>
     </main>
+    <div id="laps">
+        <section id="laps-time">
+
+        </section>
+    </div>
 </body>
 </html>

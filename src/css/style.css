@@ -18,19 +18,27 @@
     --blue3: #9ABBD9;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    margin: 0;
     background-color: var(--blue1);
 }
+
 
 main {
     width: 60vw;
     max-width: 1152px;
-    height: 50vh ;
-    max-height: 470px;
+    height: 470px;
+    min-height: 470px;
     padding: 30px;
     border-radius: 20px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -42,8 +50,13 @@ main {
 }
 
 /* Configurações do relogio e timer */
-#clock {
-    height: 80%;
+#clock, #stopwatch {
+    width: 100%;
+    height: 100%;
+}
+
+#display-clock, #display-stopwatch {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -52,6 +65,7 @@ main {
 .hours, .minutes, .seconds {
     width: 25%;
     height: 100%;
+    min-height: 100%;
     background-color: var(--black);
     border-radius: 10px;
     border: none;
@@ -111,11 +125,43 @@ main {
     opacity: 1;
 }
 
+/* Configurações da seção de voltas: */
+
+#laps {
+    padding: 20px;
+    position: relative;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+}
+
+#laps-time {
+    width: 60vw;
+    max-width: 1152px;
+    height: auto;
+    border-radius: 20px;
+    position: fixed;
+    background-color: var(--blue3);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.404);
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.textLaps {
+    margin: 5px;
+    font-weight: bold;
+}
+
 .hidden {
     display: none;
 }
 
 @media screen and (max-width: 1650px) {
+    #laps {
+        top: 20%;
+    }
+
     .h2-hours, .h2-minutes, .h2-seconds {
         font-size: 8em;
     }
@@ -143,10 +189,15 @@ main {
         align-items: center;
     }
 
-    #clock {
-        width: 90%;
-        height: 80%;
+    #laps {
+        top: 12%;
+    }
+
+    #display-clock, #display-stopwatch {
+        width: 100%;
+        height: 30%;
         display: flex;
+        gap: 10px;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;

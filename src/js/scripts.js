@@ -87,6 +87,7 @@ toggleType.addEventListener('click', () => {
     console.log('Botão "toggle" acionado');
 
     toggleClockStopwatch();
+    resetStopwatch();
 
 });
 
